@@ -1,0 +1,32 @@
+<div>
+  <md-toolbar color="primary">
+    <span><md-icon>mood</md-icon></span>
+
+    <span>Yay, Material in Angular 2!</span>
+
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+  </md-toolbar>
+  <md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item>Option 1</button>
+    <button md-menu-item>Option 2</button>
+  </md-menu>
+
+
+
+</div>
+
+<md-sidenav-container>
+
+  <md-sidenav #start mode="side" style="width: 200px" [opened]="true">
+    <a>Home</a>
+    <br>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button md-button (click)="start.toggle()"><i class="material-icons app-toolbar-menu">menu</i> </button>
+    <span>WebShop</span>
+    <span class=""></span>
+  </md-toolbar>
+</md-sidenav-container>
