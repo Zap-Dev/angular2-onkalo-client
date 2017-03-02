@@ -4,14 +4,21 @@ import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { DatatableComponent } from './datatable.component'
-
-
+import { KeysPipe } from './pipes/keys.pipe'
+import { ValuesPipe } from './pipes/values.pipe'
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [DatatableComponent, HeaderComponent, BodyComponent, FooterComponent],
-   exports: [
+  declarations: [
+    DatatableComponent,
+    HeaderComponent,
+    BodyComponent,
+    FooterComponent,
+    KeysPipe,
+    ValuesPipe,
+  ],
+  exports: [
     DatatableComponent,
    ]
 })

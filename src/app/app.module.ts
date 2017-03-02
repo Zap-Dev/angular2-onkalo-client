@@ -15,7 +15,12 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { AppRoutingModule }     from './app-routing/app-routing.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
-import { DatatableModule } from './datatable/datatable.module'
+import { DatatableModule } from './datatable/datatable.module';
+import { KeysPipe } from './datatable/pipes/keys.pipe';
+import { ValuesPipe } from './datatable/pipes/values.pipe';
+import { OrdinalPipe } from './datatable/pipes/ordinal.pipe';
+
+
 
 
 @NgModule({
@@ -24,8 +29,7 @@ import { DatatableModule } from './datatable/datatable.module'
     DashboardComponent,
     ProductsComponent,
     ProductDetailComponent,
-    ToolbarComponent, 
-
+    ToolbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { DatatableModule } from './datatable/datatable.module'
     HttpModule,
     MaterialModule,
     AppRoutingModule,
-    DatatableModule
+    DatatableModule,
+
     //SharedModule,
   ],
   providers: [],
