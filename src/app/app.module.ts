@@ -18,7 +18,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { DatatableModule } from './datatable/datatable.module';
 import { KeysPipe } from './datatable/pipes/keys.pipe';
 import { ValuesPipe } from './datatable/pipes/values.pipe';
-import { OrdinalPipe } from './datatable/pipes/ordinal.pipe';
+
 
 
 

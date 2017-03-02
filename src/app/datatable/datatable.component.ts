@@ -5,11 +5,12 @@ import { Product } from '../product'
 @Component({
   selector: 'app-datatable',
   template: `
-    <div>
+    <md-card>
+    
         <app-header [products]="products" ></app-header>
         <app-body></app-body>
         <app-footer></app-footer>
-    </div>
+    </md-card>
   `,
   styleUrls: ['./datatable.component.scss']
 })

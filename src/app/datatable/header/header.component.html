@@ -1,6 +1,6 @@
 
 <!--<div *ngFor="let product of products | slice:0:1 ; let i=index">-->
 <div *ngFor="let product of products | slice:0:1  ; let i=index">
-  <div>{{product | getjsoncolKeys }}</div>
+  <div *ngFor="let key of product  |  getjsoncolKeys">{{ key }}</div>
 </div>
 

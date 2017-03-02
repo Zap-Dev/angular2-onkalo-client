@@ -6,9 +6,11 @@ import { FooterComponent } from './footer/footer.component';
 import { DatatableComponent } from './datatable.component'
 import { KeysPipe } from './pipes/keys.pipe'
 import { ValuesPipe } from './pipes/values.pipe'
+import { MaterialModule } from '@angular/material'
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,MaterialModule
   ],
   declarations: [
     DatatableComponent,

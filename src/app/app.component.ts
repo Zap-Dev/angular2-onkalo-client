@@ -1,7 +1,7 @@
 import {Component, Output, OnInit} from '@angular/core';
 import {Product} from "./product";
 import {ProductService} from "./product.service";
-import {OrdinalPipe} from "./datatable/pipes/ordinal.pipe";
+
 
 
 
