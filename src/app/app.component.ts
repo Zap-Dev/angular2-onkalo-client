@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Output, OnInit} from '@angular/core';
 import {Product} from "./product";
 import {ProductService} from "./product.service";
 
@@ -10,13 +10,21 @@ import {ProductService} from "./product.service";
   styleUrls: ['./app.component.scss'],
   providers: [ProductService]
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
   title = 'app works!';
-
+  
+  products: Product[];
   
 
-  // products = getPr
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
+  getProducts():void{
+    this.productService.getProducts().then( products => this.products = products )
+  };
+
+  ngOnInit(): void{
+    this.getProducts();
+    console.log(this.products)
+  }
 
 }
