@@ -1,6 +1,17 @@
-
-<!--<div *ngFor="let product of products | slice:0:1 ; let i=index">-->
-<div *ngFor="let product of products | slice:0:1  ; let i=index">
-  <div *ngFor="let key of product  |  getjsoncolKeys">{{ key }}</div>
+<!--
+<div *ngFor="let product of products ; let i=index">
+      <md-checkbox></md-checkbox>
+      <div *ngFor="let key of product | getjsoncolkeys">{{ key }}</div>
 </div>
+-->
+<md-grid-list [cols]="fixedCols" >
+  <div *ngFor="let product of products ; let i=index">
+    <md-grid-tile><md-checkbox></md-checkbox></md-grid-tile>
+    <div *ngFor="let key of product | getjsoncolkeys">
+      <md-grid-tile>{{ key }}</md-grid-tile>
+    </div>
+  </div>
+</md-grid-list>
+
+
 

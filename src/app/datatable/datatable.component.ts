@@ -1,15 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../product'
+import {isUndefined} from "util";
+import {isEmpty} from "rxjs/operator/isEmpty";
+import {KeysPipe} from "./pipes/keys.pipe";
 
 
 @Component({
+  moduleId: module.id,
   selector: 'app-datatable',
   template: `
     <md-card>
-    
-        <app-header [products]="products" ></app-header>
-        <app-body></app-body>
-        <app-footer></app-footer>
+          <app-header [products]="products | slice:0:1" [fixedCols]="fixedCols" ></app-header>
+          <app-body [products]="products" [fixedCols]="fixedCols"></app-body>
+          <app-footer></app-footer>
     </md-card>
   `,
   styleUrls: ['./datatable.component.scss']
@@ -18,9 +21,9 @@ export class DatatableComponent implements OnInit {
 
   @Input() products:  Product []
   @Input() title:string
+  product: Product
 
-
-
+  fixedCols: number = 1;
   constructor(
 ) {
     //console.log(this.title)
@@ -46,13 +49,19 @@ export class DatatableComponent implements OnInit {
 
   }
   ngOnChanges(changes) {
-    // Called right after our bindings have been checked but only
-    // if one of our bindings has changed.
-    // changes is an object of the format:
-    // {
-    //   'prop': PropertyUpdate
-    // }
+    // Called right after our bindings have been checked but only if one of our bindings has changed.changes is an object of the format:
+    // {'prop': PropertyUpdate}
+
+
     console.log("OnChanges")
+    console.log(this.products instanceof Array)
+    console.log( isUndefined(this.products))
+    //Controllo se il prodotto passato dal componente parent è definito ed è >0
+    if (!isUndefined(this.products) && this.products.length >0 ){
+      this.fixedCols += Object.keys(this.products[0]).length
+    }
+
+    //this.product = ( !isUndefined(this.products)  ? this.products.slice(0,1)[0] : new Product)
     console.log(this.products)
   }
   ngAfterContentInit() {

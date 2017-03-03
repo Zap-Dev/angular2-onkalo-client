@@ -1,3 +1,20 @@
-<p>
-  body works!
-</p>
+
+<md-grid-list [cols]="fixedCols" >
+<div *ngFor="let product of products; let i=index">
+  <md-grid-tile><md-checkbox></md-checkbox></md-grid-tile>
+  <md-grid-tile *ngFor="let value of product | getjsonvalues; let i=index">
+    {{value }}
+  </md-grid-tile>
+<!--  <div *ngFor="let key of product | getjsoncolkeys">
+    <md-grid-tile>{{ product }}</md-grid-tile>
+  </div>-->
+
+<!--  <md-grid-tile>{{ product.id }}</md-grid-tile>
+  <md-grid-tile>{{ product.title }}</md-grid-tile>
+  <md-grid-tile>{{ product.condition }}</md-grid-tile>
+  <md-grid-tile>{{ product.description }}</md-grid-tile>
+  <md-grid-tile>{{ product.date }}</md-grid-tile>-->
+</div>
+</md-grid-list>
+
+

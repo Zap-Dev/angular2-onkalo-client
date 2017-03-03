@@ -2,9 +2,6 @@ import {Component, Output, OnInit} from '@angular/core';
 import {Product} from "./product";
 import {ProductService} from "./product.service";
 
-
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

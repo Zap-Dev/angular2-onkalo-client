@@ -41,7 +41,8 @@ import { ValuesPipe } from './datatable/pipes/values.pipe';
 
     //SharedModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  //providers: [ProductService],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

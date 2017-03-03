@@ -10,6 +10,7 @@ import { Product } from '../../product';
 export class HeaderComponent implements OnInit {
 
   @Input() products:  Product []
+  @Input() fixedCols: any
   numbers:number[]
 
   constructor() {
