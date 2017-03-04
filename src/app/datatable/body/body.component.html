@@ -1,20 +1,78 @@
-
 <md-grid-list [cols]="fixedCols" rowHeight="3em">
-<span *ngFor="let product of products; let i=index">
-  <md-grid-tile><md-checkbox></md-checkbox></md-grid-tile>
-  <md-grid-tile *ngFor="let value of product | getjsonvalues; let i=index">
-    {{value }}
-  </md-grid-tile>
-<!--  <div *ngFor="let key of product | getjsoncolkeys">
-    <md-grid-tile>{{ product }}</md-grid-tile>
-  </div>-->
-
-<!--  <md-grid-tile>{{ product.id }}</md-grid-tile>
-  <md-grid-tile>{{ product.title }}</md-grid-tile>
-  <md-grid-tile>{{ product.condition }}</md-grid-tile>
-  <md-grid-tile>{{ product.description }}</md-grid-tile>
-  <md-grid-tile>{{ product.date }}</md-grid-tile>-->
-</span>
+  <!--Header Column Name-->
+  <span *ngFor="let product of products | slice:0:1  let i=index">
+    <md-grid-tile class="header-checkbox"><md-checkbox [(ngModel)]="checked" style="width: 30px;" ></md-checkbox></md-grid-tile>
+    <span *ngFor="let key of product | getjsoncolkeys">
+      <md-grid-tile>{{ key }}</md-grid-tile>
+    </span>
+  </span>
+  <!--Body Column Value-->
+  <span *ngFor="let product of products; let i=index">
+    <md-grid-tile><md-checkbox [checked]="checked"></md-checkbox></md-grid-tile>
+    <md-grid-tile *ngFor="let value of product | getjsonvalues; let i=index">
+      {{value }}
+    </md-grid-tile>
+  <!--  <div *ngFor="let key of product | getjsoncolkeys">
+      <md-grid-tile>{{ product }}</md-grid-tile>
+    </div>-->
+  <!--  <md-grid-tile>{{ product.id }}</md-grid-tile>
+    <md-grid-tile>{{ product.title }}</md-grid-tile>
+    <md-grid-tile>{{ product.condition }}</md-grid-tile>
+    <md-grid-tile>{{ product.description }}</md-grid-tile>
+    <md-grid-tile>{{ product.date }}</md-grid-tile>-->
+  </span>
 </md-grid-list>
 
+<div>
+  <input type="text" [(ngModel)]="username" />
+  <button (click)="toUpperCase()">UPPERCASE!</button>
+  <button (click)="toLowerCase()">lowercase!</button>
 
+  <h1>{{ username }}</h1>
+</div>
+
+<!--
+
+<md-card>
+  <md-card-content>
+    <h2 class="example-h2">Checkbox configuration</h2>
+
+    <section class="example-section">
+      <md-checkbox class="example-margin" [(ngModel)]="checked">Checked</md-checkbox>
+      <md-checkbox class="example-margin" [(ngModel)]="indeterminate">Indeterminate</md-checkbox>
+    </section>
+
+    <section class="example-section">
+      <label class="example-margin">Align:</label>
+      <md-radio-group [(ngModel)]="align">
+        <md-radio-button class="example-margin" value="start">Start</md-radio-button>
+        <md-radio-button class="example-margin" value="end">End</md-radio-button>
+      </md-radio-group>
+    </section>
+
+    <section class="example-section">
+      <md-checkbox class="example-margin" [(ngModel)]="disabled">Disabled</md-checkbox>
+    </section>
+  </md-card-content>
+</md-card>
+
+<md-card class="result">
+  <md-card-content>
+    <h2 class="example-h2">Result</h2>
+
+    <section class="example-section">
+      <md-checkbox
+        class="example-margin"
+        [checked]="checked"
+        [indeterminate]="indeterminate"
+        [align]="align"
+        [disabled]="disabled">
+        I'm a checkbox
+      </md-checkbox>
+    </section>
+  </md-card-content>
+</md-card>
+
+
+
+-->

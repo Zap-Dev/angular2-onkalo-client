@@ -21,8 +21,6 @@ import { ValuesPipe } from './datatable/pipes/values.pipe';
 
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +28,7 @@ import { ValuesPipe } from './datatable/pipes/values.pipe';
     ProductsComponent,
     ProductDetailComponent,
     ToolbarComponent,
+
   ],
   imports: [
     BrowserModule,

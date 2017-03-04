@@ -10,7 +10,7 @@ import {KeysPipe} from "./pipes/keys.pipe";
   selector: 'app-datatable',
   template: `
     <md-card>
-          <app-header [products]="products | slice:0:1" [fixedCols]="fixedCols" ></app-header>
+          <app-header [products]="products | slice:0:1" ></app-header>
           <app-body [products]="products" [fixedCols]="fixedCols"></app-body>
           <app-footer></app-footer>
     </md-card>

@@ -4,14 +4,14 @@
       <div *ngFor="let key of product | getjsoncolkeys">{{ key }}</div>
 </div>
 -->
-<md-grid-list [cols]="fixedCols" rowHeight="3em"  >
+<!--<md-grid-list [cols]="fixedCols" rowHeight="3em" >
   <span *ngFor="let product of products ; let i=index">
-    <md-grid-tile><md-checkbox></md-checkbox></md-grid-tile>
+    <md-grid-tile><md-checkbox [(ngModel)]="checked" ></md-checkbox></md-grid-tile>
     <span *ngFor="let key of product | getjsoncolkeys">
       <md-grid-tile>{{ key }}</md-grid-tile>
     </span>
   </span>
-</md-grid-list>
+</md-grid-list>-->
 
 
 

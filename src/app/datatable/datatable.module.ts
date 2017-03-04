@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
@@ -10,7 +11,9 @@ import { MaterialModule } from '@angular/material'
 
 @NgModule({
   imports: [
-    CommonModule,MaterialModule
+    CommonModule,
+    MaterialModule,
+    FormsModule
   ],
   declarations: [
     DatatableComponent,
@@ -19,6 +22,7 @@ import { MaterialModule } from '@angular/material'
     FooterComponent,
     KeysPipe,
     ValuesPipe,
+
   ],
   exports: [
     DatatableComponent,

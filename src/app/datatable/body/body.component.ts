@@ -10,6 +10,21 @@ export class BodyComponent implements OnInit {
 
   @Input() products:  Product []
   @Input() fixedCols: any
+  @Input() checked = false;
+  indeterminate = false;
+  align = 'start';
+  disabled = false;
+
+  username: string;
+
+  toUpperCase () {
+    this.username = this.username.toUpperCase();
+  }
+  toLowerCase () {
+    this.username = this.username.toLowerCase();
+  }
+
+
   constructor() { }
 
   ngOnInit() {
