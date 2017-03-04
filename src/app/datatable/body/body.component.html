@@ -3,7 +3,7 @@
   <span *ngFor="let product of products | slice:0:1  let i=index">
     <md-grid-tile class="header-checkbox"><md-checkbox [(ngModel)]="checked" style="width: 30px;" ></md-checkbox></md-grid-tile>
     <span *ngFor="let key of product | getjsoncolkeys">
-      <md-grid-tile>{{ key }}</md-grid-tile>
+      <md-grid-tile class="header-checkbox">{{ key }}</md-grid-tile>
     </span>
   </span>
   <!--Body Column Value-->
