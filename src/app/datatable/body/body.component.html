@@ -1,6 +1,6 @@
 
-<md-grid-list [cols]="fixedCols" >
-<div *ngFor="let product of products; let i=index">
+<md-grid-list [cols]="fixedCols" rowHeight="3em">
+<span *ngFor="let product of products; let i=index">
   <md-grid-tile><md-checkbox></md-checkbox></md-grid-tile>
   <md-grid-tile *ngFor="let value of product | getjsonvalues; let i=index">
     {{value }}
@@ -14,7 +14,7 @@
   <md-grid-tile>{{ product.condition }}</md-grid-tile>
   <md-grid-tile>{{ product.description }}</md-grid-tile>
   <md-grid-tile>{{ product.date }}</md-grid-tile>-->
-</div>
+</span>
 </md-grid-list>
 
 
