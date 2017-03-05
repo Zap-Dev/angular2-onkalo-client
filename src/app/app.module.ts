@@ -19,6 +19,7 @@ import { DatatableModule } from './datatable/datatable.module';
 import { KeysPipe } from './datatable/pipes/keys.pipe';
 import { ValuesPipe } from './datatable/pipes/values.pipe';
 
+import { Ng2PaginationModule } from './components/ng2-pagination/ng2-pagination.module';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ValuesPipe } from './datatable/pipes/values.pipe';
     MaterialModule,
     AppRoutingModule,
     DatatableModule,
+    Ng2PaginationModule,
 
     //SharedModule,
   ],

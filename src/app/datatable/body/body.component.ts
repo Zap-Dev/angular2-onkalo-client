@@ -16,6 +16,8 @@ export class BodyComponent implements OnInit {
   disabled = false;
 
   username: string;
+  collection = [];
+
 
   toUpperCase () {
     this.username = this.username.toUpperCase();
@@ -25,7 +27,11 @@ export class BodyComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor() {
+    for (let i = 1; i <= 100; i++) {
+      this.collection.push(`item ${i}`);
+    }
+  }
 
   ngOnInit() {
   }
