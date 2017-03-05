@@ -4,5 +4,7 @@
   background-color: red;
   border-left-color: red;
   width:10px;
-
+&:hover {
+      background-color: #eee;
+    }
 }
