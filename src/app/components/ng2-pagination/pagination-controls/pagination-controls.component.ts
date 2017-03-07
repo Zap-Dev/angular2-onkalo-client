@@ -14,7 +14,9 @@ import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEnc
 export class PaginationControlsComponent {
 
   @Input() id: string;
-  @Input() maxSize: number = 7;
+  @Input() maxSize: number = 5;
+  @Input() showPage: boolean = true
+  @Input() showIcons: boolean = false
   @Input()
   get directionLinks(): boolean {
     return this._directionLinks;

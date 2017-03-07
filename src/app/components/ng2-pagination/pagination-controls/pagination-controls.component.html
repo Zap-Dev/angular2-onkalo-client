@@ -2,7 +2,10 @@
                       [id]="id"
                       [maxSize]="maxSize"
                       (pageChange)="pageChange.emit($event)"
+                      [showIcons]="showIcons"
                       >
+
+
 
   <!-- Paginator -->
   <div *ngIf="p.pages.length > 1" class="button-row" >
@@ -10,30 +13,38 @@
     <span class="pagination-previous" *ngIf="directionLinks">
       <a md-button *ngIf="1 < p.getCurrent()" (click)="p.previous()"
          [attr.aria-label]="previousLabel + ' ' + screenReaderPageLabel">
-        {{ previousLabel }}
+        <span *ngIf="!showIcons">{{ previousLabel }}</span>
+        <span *ngIf="showIcons"><md-icon class="material-icons" >chevron_left</md-icon></span>
       </a>
       <span *ngIf="p.isFirstPage()">
-        <a md-button disabled>{{ previousLabel }}</a>
+        <a md-button disabled>
+          <span *ngIf="!showIcons">{{ previousLabel }}</span>
+          <span *ngIf="showIcons"><md-icon class="material-icons" >chevron_left</md-icon></span>
+        </a>
       </span>
     </span>
-
-
     <!-- Current -->
-    <span  *ngFor="let page of p.pages">
-      <a md-button (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value" class="mat-button-current">
-        <span>{{ page.label }}</span>
-      </a>
-      <span *ngIf="p.getCurrent() === page.value">
-        <a md-button disabled>{{ page.label }}</a>
+    <span *ngIf="showPage">
+      <span *ngFor="let page of p.pages">
+        <a md-button (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value" class="mat-button-current">
+          <span>{{ page.label }}</span>
+        </a>
+        <span *ngIf="p.getCurrent() === page.value">
+          <a md-button disabled class="mat-button-current">{{ page.label }}</a>
+        </span>
       </span>
     </span>
-    <!-- Previous -->
+    <!-- Next -->
     <span class="pagination-next"  *ngIf="directionLinks">
       <a md-button  *ngIf="!p.isLastPage()" (click)="p.next()" [attr.aria-label]="nextLabel + ' ' + screenReaderPageLabel">
-        {{ nextLabel }}
+        <span *ngIf="!showIcons">{{ nextLabel }}</span>
+        <span *ngIf="showIcons"><md-icon class="material-icons" >chevron_right</md-icon></span>
       </a>
       <span *ngIf="p.isLastPage()">
-        <a md-button disabled>{{ nextLabel }}</a>
+        <a md-button disabled>
+          <span *ngIf="!showIcons">{{ nextLabel }}</span>
+          <span *ngIf="showIcons"><md-icon class="material-icons" >chevron_right</md-icon></span>
+        </a>
       </span>
     </span>
 

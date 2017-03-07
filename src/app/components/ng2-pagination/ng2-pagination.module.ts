@@ -11,16 +11,20 @@ export {PaginationControlsComponent} from './pagination-controls/pagination-cont
 export {PaginationControlsDirective} from './pagination-controls.directive';
 export {PaginatePipe} from './paginate.pipe';
 
-import { MaterialModule } from '@angular/material'
+import { MaterialModule } from '@angular/material';
 
 @NgModule({
   imports: [CommonModule, MaterialModule],
   declarations: [
     PaginatePipe,
     PaginationControlsComponent,
-    PaginationControlsDirective
+    PaginationControlsDirective,
   ],
   providers: [PaginationService],
-  exports: [PaginatePipe, PaginationControlsComponent, PaginationControlsDirective]
+  exports: [
+    PaginatePipe,
+    PaginationControlsComponent,
+    PaginationControlsDirective
+  ]
 })
 export class Ng2PaginationModule { }

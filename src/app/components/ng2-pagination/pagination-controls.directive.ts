@@ -21,6 +21,7 @@ export interface Page {
 export class PaginationControlsDirective {
   @Input() id: string;
   @Input() maxSize: number = 7;
+  @Input() showIcons: boolean = false;
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
   pages: Page[] = [];
 

@@ -12,6 +12,9 @@ export class BodyComponent implements OnInit {
   @Input() fixedCols: any
   @Input() checked = false;
   @Input() itemForPage:[{}];
+  @Input() maxSizeBottom:number=7
+  @Input() showPage: boolean = false
+  @Input() showIcons: boolean = false
   selectedValue: string;
   indeterminate = false;
   align = 'start';
