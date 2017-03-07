@@ -1,15 +1,27 @@
+<md-grid-list [cols]="3" rowHeight="4em">
+  <md-grid-tile>
+    <pagination-controls
+      #api
+      (pageChange)="p = $event"
+      [showPage]="showPage"
+      [showIcons]=true >
+    </pagination-controls>
+  </md-grid-tile>
+  <md-grid-tile>
+    <span *ngIf="products">1-{{selectedValue}} of {{products.length}}</span>
+  </md-grid-tile>
+  <md-grid-tile>
+    <md-select placeholder="Rows for Page" [(ngModel)]="selectedValue">
+      <md-option *ngFor="let item of itemForPage" [value]="item.value">
+        {{ item.viewValue }}
+      </md-option>
+    </md-select>
+  </md-grid-tile>
+</md-grid-list>
+
+
+
 <!--Header Column Name-->
-
-<div>
-  <span *ngIf="products">1-{{selectedValue}} of {{products.length}}</span>
-
-<md-select placeholder="Rows for Page" [(ngModel)]="selectedValue">
-  <md-option *ngFor="let item of itemForPage" [value]="item.value">
-    {{ item.viewValue }}
-  </md-option>
-</md-select>
-</div>
-
 <md-list>
   <md-grid-list [cols]="fixedCols" rowHeight="2em">
     <span *ngFor="let product of products | slice:0:1  let i=index">
@@ -47,7 +59,8 @@
   <md-grid-tile>
     <pagination-controls
       #api
-      (pageChange)="p = $event">
+      (pageChange)="p = $event"
+      [maxSize]="maxSizeBottom">
     </pagination-controls>
   </md-grid-tile>
 </md-grid-list>
