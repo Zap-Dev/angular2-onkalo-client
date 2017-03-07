@@ -1,6 +1,6 @@
 import {async, TestBed} from '@angular/core/testing';
 import {getListItems, getListItemsText, ComponentTestComponent} from './testing/testing-helpers';
-import {PaginationControlsComponent} from './pagination-controls.component';
+import {PaginationControlsComponent} from './pagination-controls/pagination-controls.component';
 import {PaginationService} from './pagination.service';
 import {PaginatePipe} from './paginate.pipe';
 import {PaginationControlsDirective} from './pagination-controls.directive';

@@ -40,7 +40,6 @@ export class DatatableComponent implements OnInit {
     // Speak now or forever hold your peace
     console.log("OnDestroy")
     console.log(this.products)
-
   }
   ngDoCheck() {
     // Custom change detection

@@ -14,12 +14,12 @@
       <a md-button *ngIf="1 < p.getCurrent()" (click)="p.previous()"
          [attr.aria-label]="previousLabel + ' ' + screenReaderPageLabel">
         <span *ngIf="!showIcons">{{ previousLabel }}</span>
-        <span *ngIf="showIcons"><md-icon class="material-icons" >chevron_left</md-icon></span>
+        <md-icon *ngIf="showIcons" class="material-icons indicator" >chevron_left</md-icon>
       </a>
       <span *ngIf="p.isFirstPage()">
         <a md-button disabled>
           <span *ngIf="!showIcons">{{ previousLabel }}</span>
-          <span *ngIf="showIcons"><md-icon class="material-icons" >chevron_left</md-icon></span>
+          <md-icon *ngIf="showIcons" class="material-icons indicator" >chevron_left</md-icon>
         </a>
       </span>
     </span>
@@ -38,12 +38,12 @@
     <span class="pagination-next"  *ngIf="directionLinks">
       <a md-button  *ngIf="!p.isLastPage()" (click)="p.next()" [attr.aria-label]="nextLabel + ' ' + screenReaderPageLabel">
         <span *ngIf="!showIcons">{{ nextLabel }}</span>
-        <span *ngIf="showIcons"><md-icon class="material-icons" >chevron_right</md-icon></span>
+        <md-icon *ngIf="showIcons" class="material-icons indicator" >chevron_right</md-icon>
       </a>
       <span *ngIf="p.isLastPage()">
         <a md-button disabled>
           <span *ngIf="!showIcons">{{ nextLabel }}</span>
-          <span *ngIf="showIcons"><md-icon class="material-icons" >chevron_right</md-icon></span>
+          <md-icon *ngIf="showIcons" class="material-icons indicator" >chevron_right</md-icon>
         </a>
       </span>
     </span>
